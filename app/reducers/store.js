@@ -5,7 +5,8 @@ import { routerMiddleware, routerReducer } from 'react-router-redux';
 import * as reducers from './reducers';
 
 const reducer = combineReducers({
-  settings: reducers.settings
+  settings: reducers.settings,
+  searchUsers: reducers.searchUsers
 });
 
 const routingMiddleware = routerMiddleware(browserHistory);

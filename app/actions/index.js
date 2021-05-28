@@ -10,21 +10,29 @@ export function settings () {
   };
 }
 
+export function setSearchUsersData (data) {
+  return {
+    type: actionEvents.SET_SEARCH_USERS_DATA,
+    payload: data
+  };
+}
+
 export function getSettings () {
   return function (dispatch) {
     dispatch(settings());
   };
 }
 
-export function getJobResults (details) {
+export function searchUsers (details) {
   return function (dispatch) {
-    return dataRequests.getJobResults(details)
+    return dataRequests.getUsers(details)
     .then(function (response) {
-      dispatch(setSearchData(response.data));
+      dispatch(setSearchUsersData(response.data));
     })
     .catch(function (error) {
       // Dispatch notification for the showing the error msg in UI
-      console.log('error');
+      console.log('error in search users');
+      console.log(error)
     });
   } 
 }

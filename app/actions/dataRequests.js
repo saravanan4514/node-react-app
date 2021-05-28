@@ -13,10 +13,10 @@ axios.interceptors.response.use((response) => {
   return Promise.reject(error);
 });
 
-export function getJobResults (searchDetails) {
+export function getUsers (searchDetails) {
   console.log(searchDetails);
   return axios({
     method: 'get',
-    url: `/api/jobs?role=${searchDetails.role}&availability=${searchDetails.availability}`
+    url: `/api/users`
   });
 }

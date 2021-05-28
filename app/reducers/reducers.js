@@ -30,9 +30,19 @@ export function settings (state, action) {
 
   if (actionType === actionEvents.SET_SETTINGS) {
     newState = {
-      settings: 'settings'
+      settings: 'settingsState'
     };
   }
 
+  return newState;
+}
+
+export function searchUsers (state, action) {
+  let actionType = action.type,
+      newState = Object.assign({}, state);
+
+  if (actionType === actionEvents.SET_SEARCH_USERS_DATA) {
+    newState = action.payload;
+  }
   return newState;
 }
